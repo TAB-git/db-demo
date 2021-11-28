@@ -2,9 +2,6 @@ package com.l7.dbdemo.validator;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAccessor;
 import java.util.Date;
 
 import javax.validation.ConstraintValidator;
@@ -36,9 +33,9 @@ public class CheckDateValidator implements ConstraintValidator<CheckDateFormat, 
 		Date date = null;
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat(format);
-			DateTimeFormatter dateTimeFormatter=DateTimeFormatter.ofPattern(format);
-			TemporalAccessor parse = dateTimeFormatter.parse(format);
-			LocalDate parse2 = LocalDate.parse(value, dateTimeFormatter);
+//			DateTimeFormatter dateTimeFormatter=DateTimeFormatter.ofPattern(format);
+//			TemporalAccessor parse = dateTimeFormatter.parse(format);
+//			LocalDate parse2 = LocalDate.parse(value, dateTimeFormatter);
 			if (value != null) {
 				date = sdf.parse(value);
 				if (!value.equals(sdf.format(date))) {
